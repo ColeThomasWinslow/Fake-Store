@@ -5,7 +5,7 @@ import { ProductListing } from "./components/ProductListing";
 import { ProductDetails } from "./components/ProductDetail";
 import Cart from "./components/Cart";
 import Banner from "./components/Banner";
-
+import { Footer } from "./components/Footer";
 function App() {
   return (
     <div className="App">
@@ -26,6 +26,7 @@ function App() {
             <Route>404 Not Found!</Route>
           </Switch>
         </main>
+        <Footer />
       </Router>
     </div>
   );

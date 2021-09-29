@@ -10,6 +10,7 @@ export const Header = () => {
         <Link to="/">
           <h2 className="Logo">FakeShop</h2>
         </Link>
+
         <Link to="/cart">
           <div className="cartBox">
             <i className="shop icon"></i>

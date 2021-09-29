@@ -189,6 +189,7 @@ div.checkout {
   background: rgb(127, 226, 127);
   padding: 5px;
   display: flex;
+  width: 200px;
   color: white;
   font-weight: bold;
   justify-content: center;
@@ -220,4 +221,30 @@ p.productTypes {
   letter-spacing: 4px;
   text-transform: uppercase;
   color: rgb(60, 239, 255);
+}
+div.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.745);
+}
+div.modal__inner {
+  transition: top 0.25s ease;
+  position: absolute;
+  top: -20%;
+  right: 15px;
+  bottom: 0;
+  left: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 5px;
+  padding: 1em 2em;
+  height: 50%;
 }

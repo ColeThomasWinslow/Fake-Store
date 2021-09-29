@@ -1,11 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addProduct } from "../redux/actions/productActions";
 function Cart() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
-
+  const [Open, setOpen] = useState(false);
   const totalPriceArr = cart.products.map((product) => {
     return product.price;
   });
@@ -13,11 +13,15 @@ function Cart() {
   let sum = totalPriceArr.reduce(function (a, b) {
     return a + b;
   }, 0);
-  console.log(sum);
+
   function removeFromCart(ID) {
     const Filtered = cart.products.filter((element) => element.id !== ID);
     console.log(Filtered);
     dispatch(addProduct((cart.products = Filtered)));
+  }
+
+  function checkoutToggle() {
+    setOpen((Open) => !Open);
   }
   return (
     <div>
@@ -47,8 +51,34 @@ function Cart() {
               </div>
             );
           })}
-          <div className="checkout">
+          <div className="checkout" onClick={checkoutToggle}>
             <h3>CheckOut</h3>
+          </div>
+        </div>
+      )}
+      {Open && (
+        <div className="modal">
+          <div className="modal__inner">
+            <h3>Total Cart: ${sum}</h3>
+            {cart.products.map((product) => {
+              return (
+                <div className="cartCard">
+                  <h4 className="cartTitle">{product.title}</h4>
+                  <p className="cartPrice">Price: ${product.price}</p>
+                  <div
+                    className="remove"
+                    onClick={() => removeFromCart(product.id)}
+                  >
+                    remove item
+                  </div>
+                </div>
+              );
+            })}
+            <div>Checkout with paypal</div>
+            <div>Check out with debit card</div>
+            <div onClick={checkoutToggle}>
+              <h2>cancel</h2>
+            </div>
           </div>
         </div>
       )}
