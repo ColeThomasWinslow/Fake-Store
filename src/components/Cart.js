@@ -32,7 +32,7 @@ function Cart() {
       {cart.products.length >= 1 && (
         <div>
           <h2> YOUR CART</h2>
-          <h2>Total Cart: ${sum}</h2>
+          <h3>Total Cart: ${sum}</h3>
           {cart.products.map((product) => {
             return (
               <div className="cartCard">
@@ -47,6 +47,9 @@ function Cart() {
               </div>
             );
           })}
+          <div className="checkout">
+            <h3>CheckOut</h3>
+          </div>
         </div>
       )}
     </div>

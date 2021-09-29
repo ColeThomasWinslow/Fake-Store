@@ -8,7 +8,7 @@ export const Header = () => {
     <div className="ui fixed menu header">
       <div className="header">
         <Link to="/">
-          <h2>FakeShop</h2>
+          <h2 className="Logo">FakeShop</h2>
         </Link>
         <Link to="/cart">
           <div className="cartBox">

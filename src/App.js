@@ -4,6 +4,7 @@ import { Header } from "./components/Header";
 import { ProductListing } from "./components/ProductListing";
 import { ProductDetails } from "./components/ProductDetail";
 import Cart from "./components/Cart";
+import Banner from "./components/Banner";
 
 function App() {
   return (
@@ -12,7 +13,10 @@ function App() {
         <Header />
         <main>
           <Switch>
-            <Route path="/" exact component={ProductListing} />
+            <Route exact path="/">
+              <Banner />
+              <ProductListing />
+            </Route>
             <Route path="/cart" exact component={Cart} />
             <Route
               path="/products/:productId"

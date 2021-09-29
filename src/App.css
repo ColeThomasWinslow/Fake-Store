@@ -13,12 +13,12 @@ main {
 div.header {
   display: flex;
   width: 100%;
-  padding: 10px;
+  padding-bottom: 20px;
   justify-content: space-around;
-  align-items: center;
+  align-items: baseline;
 }
-h2.logo {
-  padding: 15px;
+h2.Logo {
+  flex: 1;
 }
 img.image {
   width: 250px;
@@ -183,4 +183,41 @@ div.emptyCart {
   text-transform: uppercase;
   text-align: center;
   padding: 20px;
+}
+div.checkout {
+  text-align: center;
+  background: rgb(127, 226, 127);
+  padding: 5px;
+  display: flex;
+  color: white;
+  font-weight: bold;
+  justify-content: center;
+  border-radius: 10px;
+}
+div.checkout:hover {
+  background: rgb(34, 122, 34);
+  cursor: pointer;
+}
+div.Banner {
+  height: 250px;
+  width: 100%;
+  text-align: center;
+  background-image: linear-gradient(rgb(88, 170, 236), rgb(22, 27, 57));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: black inset 0px 0px 8px;
+  margin-bottom: 20px;
+}
+h1.bannerTitle {
+  font-size: 35px;
+  text-transform: uppercase;
+}
+p.productTypes {
+  font-weight: bold;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgb(46, 203, 217);
 }
