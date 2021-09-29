@@ -11,6 +11,7 @@ export const addProduct = (product) => {
     payload: product,
   };
 };
+
 export const selectedProduct = (product) => {
   return {
     type: ActionTypes.SElECTED_PRODUCTS,

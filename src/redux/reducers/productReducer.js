@@ -26,6 +26,7 @@ export const addProductReducer = (state = initialState, { type, payload }) => {
   switch (type) {
     case ActionTypes.ADD_TO_CART:
       return { ...state, ...payload };
+
     default:
       return state;
   }
