@@ -1,11 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 export const Header = () => {
+  const cart = useSelector((state) => state.cart);
+
   return (
-    <div className="ui fixed menu">
-      <div className="ui container header">
+    <div className="ui fixed menu header">
+      <div className="header">
         <Link to="/">
-          <h2 className="logo">FakeShop</h2>
+          <h2>FakeShop</h2>
+        </Link>
+        <Link to="/cart">
+          <div className="cartBox">
+            <i className="shop icon"></i>
+            <h3>cart: {cart.products.length}</h3>
+          </div>
         </Link>
       </div>
     </div>

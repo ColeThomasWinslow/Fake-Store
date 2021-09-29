@@ -3,7 +3,7 @@ body {
   box-sizing: border-box;
 }
 main {
-  margin-top: 58px;
+  margin-top: 88px;
   display: flex;
 
   align-items: center;
@@ -11,7 +11,11 @@ main {
   justify-content: center;
 }
 div.header {
-  margin-top: 10px;
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  justify-content: space-around;
+  align-items: center;
 }
 h2.logo {
   padding: 15px;
@@ -111,6 +115,7 @@ div.content {
 }
 img.singleImg {
   width: 300px;
+  box-shadow: 0px 0px 15px;
   padding: 20px;
 }
 div.fullPrice {
@@ -135,4 +140,9 @@ div.AddToCart {
 div.AddToCart:hover {
   cursor: pointer;
   background: rgb(214, 126, 126);
+}
+div.cartBox {
+  display: flex;
+  align-items: baseline;
+  font-size: 18px;
 }

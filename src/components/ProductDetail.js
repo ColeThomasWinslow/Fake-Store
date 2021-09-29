@@ -1,14 +1,22 @@
 import React, { useEffect } from "react";
 import axios from "axios";
-import { selectedProduct } from "../redux/actions/productActions";
+import {
+  selectedProduct,
+  removeSelectedProduct,
+  addProduct,
+} from "../redux/actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 export const ProductDetails = () => {
   const product = useSelector((state) => state.product);
-  const { image, title, price, category, description } = product;
-  const { productId } = useParams();
-  const dispatch = useDispatch();
+  const cart = useSelector((state) => state.cart);
 
+  const { image, title, price, category, description } = product;
+  // getting id form url
+  const { productId } = useParams();
+  // dispatch actions
+  const dispatch = useDispatch();
+  // Api Call to fake store api
   const fetchProductDetail = async () => {
     const response = await axios
       .get(`https://fakestoreapi.com/products/${productId}`)
@@ -18,11 +26,17 @@ export const ProductDetails = () => {
 
     dispatch(selectedProduct(response.data));
   };
-
+  // Add to cart action
+  function addToCart() {
+    dispatch(addProduct(cart.products.push(product)));
+  }
   useEffect(() => {
     if (productId && productId !== "") fetchProductDetail();
+    return () => {
+      dispatch(removeSelectedProduct());
+    };
   }, [productId]);
-  console.log("Product", product);
+
   return (
     <div className="ui grid container">
       {Object.keys(product).length === 0 ? (
@@ -52,7 +66,7 @@ export const ProductDetails = () => {
                   <a>$ {price}</a>
                 </div>
                 <p>{description}</p>
-                <div className="AddToCart">
+                <div className="AddToCart" onClick={addToCart}>
                   <i className="shop icon"></i>
                   <div className="visible content">Add to cart</div>
                 </div>
