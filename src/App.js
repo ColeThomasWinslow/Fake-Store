@@ -6,6 +6,7 @@ import { ProductDetails } from "./components/ProductDetail";
 import Cart from "./components/Cart";
 import Banner from "./components/Banner";
 import { Footer } from "./components/Footer";
+import SuggestedProducts from "./components/SuggestedProducts";
 function App() {
   return (
     <div className="App">
@@ -23,6 +24,7 @@ function App() {
               exact
               component={ProductDetails}
             />
+
             <Route>404 Not Found!</Route>
           </Switch>
         </main>

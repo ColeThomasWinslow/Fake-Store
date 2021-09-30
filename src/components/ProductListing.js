@@ -22,7 +22,9 @@ export const ProductListing = () => {
 
   return (
     <div className="ui grid container">
+      <div className="Line top"></div>
       <ProductComponent />
+      <div className="Line top bottom"></div>
     </div>
   );
 };

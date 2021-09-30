@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addProduct } from "../redux/actions/productActions";
+import SuggestedProducts from "./SuggestedProducts";
 function Cart() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
@@ -35,8 +36,10 @@ function Cart() {
       )}
       {cart.products.length >= 1 && (
         <div>
-          <h2> YOUR CART</h2>
+          <h1> YOUR CART</h1>
+          <div className="Line bottom"></div>
           <h3>Total Cart: ${sum}</h3>
+
           {cart.products.map((product) => {
             return (
               <div className="cartCard">
@@ -54,6 +57,7 @@ function Cart() {
               </div>
             );
           })}
+          <div className="Line top"></div>
           <div className="checkBtn" onClick={checkoutToggle}>
             <h5 className="checkout">CheckOut</h5>
           </div>
@@ -78,6 +82,10 @@ function Cart() {
           </div>
         </div>
       )}
+      <div>
+        <div className="Line top bottom"></div>
+        <SuggestedProducts />
+      </div>
     </div>
   );
 }

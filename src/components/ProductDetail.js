@@ -7,6 +7,7 @@ import {
 } from "../redux/actions/productActions";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
+import SuggestedProducts from "./SuggestedProducts";
 export const ProductDetails = () => {
   const product = useSelector((state) => state.product);
   const cart = useSelector((state) => state.cart);
@@ -43,6 +44,7 @@ export const ProductDetails = () => {
         <div>LOADING </div>
       ) : (
         <div className="cardBox">
+          <div className="Line top"></div>
           <div className="ui placeholder segment ">
             <div className="ui two column stackable center aligned grid cardBox">
               <div className="middle aligned row ">
@@ -75,6 +77,9 @@ export const ProductDetails = () => {
               </div>
             </div>
           </div>
+          <div className="Line top bottom"></div>
+          <SuggestedProducts />
+          <div className="Line top"></div>
         </div>
       )}
     </div>

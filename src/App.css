@@ -150,6 +150,9 @@ div.cartBox {
   align-items: baseline;
   font-size: 18px;
 }
+i.cart {
+  font-size: 30px;
+}
 div.cartCard {
   width: 85vw;
   padding: 10px;
@@ -248,7 +251,7 @@ div.modal {
 div.modal__inner {
   transition: top 0.25s ease;
   position: absolute;
-  top: -20%;
+  top: 5%;
   right: 10%;
   bottom: 0;
   left: 10%;
@@ -262,7 +265,7 @@ div.modal__inner {
   background: #fff;
   border-radius: 5px;
   padding: 1em 2em;
-  height: 50%;
+  height: 70%;
 }
 div.cardBox {
   margin-top: 50px;
@@ -343,4 +346,50 @@ img.DevTag {
   bottom: -1px;
   right: 0px;
   z-index: 20;
+}
+div.Line {
+  background: rgb(59, 144, 217);
+  height: 3px;
+  width: 100%;
+}
+div.top {
+  margin-top: 25px;
+}
+div.bottom {
+  margin-bottom: 40px;
+}
+h3.number {
+  align-content: center;
+  background: white;
+  border-radius: 100%;
+  width: 25px;
+  padding: 5px;
+  font-size: 12px;
+  height: 25px;
+  text-align: center;
+  box-shadow: rgba(0, 0, 0, 0.43) 0px 0px 5px;
+  margin-top: -5px;
+  z-index: 20;
+}
+div.carouselCont {
+  color: black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+h2.Black {
+  color: black;
+  z-index: 20;
+}
+div.scrollCard {
+  display: flex;
+
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 250px;
+  height: 450px;
+}
+button {
+  display: none;
 }

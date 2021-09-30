@@ -20,8 +20,8 @@ export const Header = () => {
 
           <Link to="/cart">
             <div className="cartBox">
-              <i className="shop icon"></i>
-              <h3>cart: {cart.products.length}</h3>
+              <i className="shop icon cart"></i>
+              <h3 className="number"> {cart.products.length}</h3>
             </div>
           </Link>
         </div>
