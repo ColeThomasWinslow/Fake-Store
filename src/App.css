@@ -13,7 +13,7 @@ main {
 div.header {
   display: flex;
   width: 100%;
-
+  margin-bottom: 0px;
   justify-content: space-around;
   align-items: center;
 }
@@ -317,4 +317,23 @@ div.imageMin {
   display: flex;
   align-items: center;
   margin: 10px;
+}
+div.search {
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  left: 0;
+}
+input {
+  width: 100%;
+  text-align: center;
+  border: none;
+  height: 50px;
+  margin-top: 70px;
+}
+div.searchQ {
+  background-color: white;
+  padding: 10px;
+  z-index: 20;
+  color: black;
 }
