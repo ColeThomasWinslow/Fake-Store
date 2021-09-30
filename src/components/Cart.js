@@ -40,6 +40,9 @@ function Cart() {
           {cart.products.map((product) => {
             return (
               <div className="cartCard">
+                <div className="imageMin">
+                  <img width="25px" src={product.image} alt={product.title} />
+                </div>
                 <h4 className="cartTitle">{product.title}</h4>
                 <p className="cartPrice">Price: ${product.price}</p>
                 <div
@@ -51,33 +54,26 @@ function Cart() {
               </div>
             );
           })}
-          <div className="checkout" onClick={checkoutToggle}>
-            <h3>CheckOut</h3>
+          <div className="checkBtn" onClick={checkoutToggle}>
+            <h5 className="checkout">CheckOut</h5>
           </div>
         </div>
       )}
       {Open && (
         <div className="modal">
           <div className="modal__inner">
-            <h3>Total Cart: ${sum}</h3>
-            {cart.products.map((product) => {
-              return (
-                <div className="cartCard">
-                  <h4 className="cartTitle">{product.title}</h4>
-                  <p className="cartPrice">Price: ${product.price}</p>
-                  <div
-                    className="remove"
-                    onClick={() => removeFromCart(product.id)}
-                  >
-                    remove item
-                  </div>
-                </div>
-              );
-            })}
-            <div>Checkout with paypal</div>
-            <div>Check out with debit card</div>
-            <div onClick={checkoutToggle}>
-              <h2>cancel</h2>
+            <i className="shop icon bigShop"></i>
+            <h2>Total Cart: ${sum}</h2>
+
+            <h3>items in cart: {cart.products.length}</h3>
+            <div className="payPal opacityH">
+              <img width="110px" src="/Images/paypal.png" />
+            </div>
+            <div className="Debit opacityH">
+              <p>Check out with debit card</p>
+            </div>
+            <div className="Cancel opacityH" onClick={checkoutToggle}>
+              <p>cancel</p>
             </div>
           </div>
         </div>

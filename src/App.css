@@ -13,12 +13,16 @@ main {
 div.header {
   display: flex;
   width: 100%;
-  padding-bottom: 20px;
+
   justify-content: space-around;
-  align-items: baseline;
+  align-items: center;
 }
-h2.Logo {
+img.Logo {
+  margin-top: 30px;
   flex: 1;
+}
+img.Logo:hover {
+  opacity: 80%;
 }
 img.image {
   width: 250px;
@@ -184,19 +188,25 @@ div.emptyCart {
   text-align: center;
   padding: 20px;
 }
-div.checkout {
+div.checkBtn {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+}
+h5.checkout {
+  text-transform: uppercase;
   text-align: center;
-  background: rgb(127, 226, 127);
+  background: rgb(65, 185, 65);
   padding: 5px;
   display: flex;
-  width: 200px;
+  width: 35vw;
   color: white;
   font-weight: bold;
   justify-content: center;
   border-radius: 10px;
 }
-div.checkout:hover {
-  background: rgb(34, 122, 34);
+h5.checkout:hover {
+  background: rgb(42, 149, 42);
   cursor: pointer;
 }
 div.Banner {
@@ -218,9 +228,14 @@ h1.bannerTitle {
 }
 p.productTypes {
   font-weight: bold;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
   text-transform: uppercase;
   color: rgb(60, 239, 255);
+}
+@media only screen and (max-width: 600px) {
+  p.productTypes {
+    font-size: 12px;
+  }
 }
 div.modal {
   position: fixed;
@@ -234,12 +249,13 @@ div.modal__inner {
   transition: top 0.25s ease;
   position: absolute;
   top: -20%;
-  right: 15px;
+  right: 10%;
   bottom: 0;
-  left: 15px;
+  left: 10%;
   text-align: center;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   margin: auto;
   overflow: hidden;
@@ -247,4 +263,58 @@ div.modal__inner {
   border-radius: 5px;
   padding: 1em 2em;
   height: 50%;
+}
+div.cardBox {
+  margin-top: 50px;
+  margin-bottom: 100px;
+}
+div.payPal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  height: 50px;
+  border-radius: 5px;
+  border: 2px solid rgb(197, 178, 56);
+  background: rgb(254, 213, 64);
+}
+div.Cancel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  height: 30px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 2px solid rgb(180, 15, 15);
+  background: rgb(244, 99, 80);
+}
+div.Debit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50vw;
+  height: 50px;
+  margin: 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: 2px solid rgb(68, 68, 68);
+  background: rgb(0, 0, 0);
+}
+div.opacityH:hover {
+  opacity: 60%;
+  cursor: pointer;
+}
+i.bigShop {
+  font-size: 50px;
+}
+div.imageMin {
+  display: flex;
+  align-items: center;
+  margin: 10px;
 }

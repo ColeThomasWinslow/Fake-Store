@@ -8,7 +8,12 @@ export const Header = () => {
     <div className="ui fixed menu header">
       <div className="header">
         <Link to="/">
-          <h2 className="Logo">FakeShop</h2>
+          <img
+            className="Logo"
+            width="198px"
+            alt="Logo"
+            src="/Images/FAKE-SHOP.png"
+          />
         </Link>
 
         <Link to="/cart">
