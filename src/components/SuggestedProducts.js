@@ -39,7 +39,8 @@ function SuggestedProducts() {
             },
           }}
           responsiveProps={[
-            { minWidth: 400, itemsToShow: 3 },
+            { minWidth: 900, itemsToShow: 4 },
+
             { maxWidth: 767, itemsToShow: 1 },
           ]}
         >

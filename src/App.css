@@ -3,7 +3,7 @@ body {
   box-sizing: border-box;
 }
 main {
-  margin-top: 88px;
+  margin-top: 108px;
   display: flex;
 
   align-items: center;
@@ -34,6 +34,7 @@ div.imgWrap {
   width: 250px;
   height: 400px;
   align-items: center;
+  z-index: -20;
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
@@ -92,7 +93,7 @@ div.cat {
   text-transform: uppercase;
   font-weight: bold;
 
-  z-index: 20px;
+  z-index: -5;
 
   margin-bottom: 0px;
 }
@@ -247,6 +248,7 @@ div.modal {
   bottom: 0;
   left: 0;
   background: rgba(0, 0, 0, 0.745);
+  z-index: 20;
 }
 div.modal__inner {
   transition: top 0.25s ease;
@@ -255,6 +257,7 @@ div.modal__inner {
   right: 10%;
   bottom: 0;
   left: 10%;
+  z-index: 20;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -372,16 +375,16 @@ h3.number {
   z-index: 20;
 }
 div.carouselCont {
-  color: black;
+  background: rgba(128, 128, 128, 0.094);
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: 2px solid rgb(226, 225, 225);
 }
-h2.Black {
-  color: black;
-  z-index: 20;
-}
+
 div.scrollCard {
   display: flex;
 
