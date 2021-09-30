@@ -6,6 +6,7 @@ export const Header = () => {
 
   return (
     <div>
+      <img className="DevTag" src="/Images/Dev-Tag.png" alt="Dev" />
       <div className="ui fixed menu header">
         <div className="header">
           <Link to="/">

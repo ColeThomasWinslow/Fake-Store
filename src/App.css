@@ -337,3 +337,10 @@ div.searchQ {
   z-index: 20;
   color: black;
 }
+img.DevTag {
+  width: 200px;
+  position: fixed;
+  bottom: -1px;
+  right: 0px;
+  z-index: 20;
+}
