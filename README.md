@@ -10,7 +10,7 @@ This app is a Online store that allows user to add items to their cart using Red
 
 ## Deployed application
 
-Deployed Website Here: [Link](https://fakeshopctw.netlify.app/)
+[Live Website](https://fakeshopctw.netlify.app/)
 
 ## How it works
 
