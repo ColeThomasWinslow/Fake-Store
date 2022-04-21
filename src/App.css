@@ -17,7 +17,7 @@ main {
 }
 
 img.Logo:hover {
-  opacity: 90%;
+  opacity: 0.9;
 }
 .image {
   width: 200px;
@@ -287,7 +287,7 @@ div.Debit {
   background: rgb(0, 0, 0);
 }
 div.opacityH:hover {
-  opacity: 60%;
+  opacity: 0.6;
   cursor: pointer;
 }
 i.bigShop {
@@ -312,7 +312,7 @@ div.searchQ {
   color: black;
 }
 a:hover {
-  opacity: 80%;
+  opacity: 0.8;
   cursor: pointer;
 }
 h3.number {
