@@ -1,38 +1,46 @@
 import React, { useState } from "react";
 import { useSelector } from "react-redux";
+import SearchIcon from "../icons/Search.svg";
 import { Link } from "react-router-dom";
 function Search() {
   const products = useSelector((state) => state.allProducts.products);
   const [Search, setSearch] = useState("");
+  const Clear = () => {
+    setSearch("");
+  };
   return (
     <div>
       <div className="search">
-        <input
-          placeholder="Search For Products"
-          onChange={(event) => setSearch(event.target.value)}
-        />
+        <div className="Box">
+          <input
+            value={Search}
+            placeholder="Search For Products"
+            onChange={(event) => setSearch(event.target.value)}
+          />
+          <img src={SearchIcon} alt="Search" />
+        </div>
         {Search === "" ? (
           <div></div>
         ) : (
-          products
-            .filter((value) => {
-              if (Search === " ") {
-                return value;
-              } else if (
-                value.title.toLowerCase().includes(Search.toLowerCase())
-              ) {
-                return value;
-              }
-            })
-            .map((value) => {
-              return (
-                <div className="searchQ" key={value.id}>
-                  <Link to={`/products/${value.id}`}>
-                    <p>{value.title}</p>
+          <div className="searchQ">
+            {products
+              .filter((value) => {
+                if (Search === " ") {
+                  return value;
+                } else if (
+                  value.title.toLowerCase().includes(Search.toLowerCase())
+                ) {
+                  return value;
+                }
+              })
+              .map((value) => {
+                return (
+                  <Link key={value.id} to={`/products/${value.id}`}>
+                    <p onClick={Clear}>{value.title}</p>
                   </Link>
-                </div>
-              );
-            })
+                );
+              })}
+          </div>
         )}
       </div>
     </div>

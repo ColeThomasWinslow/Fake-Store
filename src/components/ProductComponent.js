@@ -6,36 +6,25 @@ const ProductComponent = () => {
   const renderList = products.map((product) => {
     const { id, title, image, price, category } = product;
     return (
-      <div key={id}>
-        <div className="card">
-          <Link to={`/products/${id}`}>
-            <div className="meta price">$ {price}</div>{" "}
-            {category === "men's clothing" && (
-              <div className="meta cat mens">{category}</div>
-            )}
-            {category === "electronics" && (
-              <div className="meta cat electronics">{category}</div>
-            )}
-            {category === "jewelery" && (
-              <div className="meta cat jewelery">{category}</div>
-            )}
-            {category === "women's clothing" && (
-              <div className="meta cat women">{category}</div>
-            )}
-            <div className="imgWrap">
-              {" "}
-              <img className="image" src={image} alt={title} />{" "}
-              <div className="content">
-                <h4 className="title">{title}</h4>
-              </div>
+      <div className="card" key={id}>
+        <Link to={`/products/${id}`}>
+          <div className="imgWrap">
+            <img className="image" src={image} alt={title} />{" "}
+            <div className="content">
+              <div className="meta price">$ {price}</div>
+              <h4 className="title">{title}</h4>
             </div>
-          </Link>
-        </div>
+          </div>
+        </Link>
       </div>
     );
   });
 
-  return <div className="cardsCont">{renderList}</div>;
+  return (
+    <div className="BigCont">
+      <div className="cardsCont">{renderList}</div>
+    </div>
+  );
 };
 
 export default ProductComponent;

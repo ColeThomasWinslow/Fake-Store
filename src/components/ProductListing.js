@@ -3,7 +3,8 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import { setProducts } from "../redux/actions/productActions";
 import ProductComponent from "./ProductComponent";
-
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 export const ProductListing = () => {
   const dispatch = useDispatch();
   const fetchProducts = async () => {
@@ -21,10 +22,11 @@ export const ProductListing = () => {
   }, []);
 
   return (
-    <div className="ui grid container">
-      <div className="Line top"></div>
+    <div className="">
+      <div className="PageTitle">
+        <h2>Shop All Products</h2>
+      </div>
       <ProductComponent />
-      <div className="Line top bottom"></div>
     </div>
   );
 };

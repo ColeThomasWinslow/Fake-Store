@@ -3,69 +3,48 @@ body {
   box-sizing: border-box;
 }
 main {
-  margin-top: 108px;
-  display: flex;
-
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  margin-top: 8px;
 }
-div.header {
+.header {
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
-  margin-bottom: 0px;
-  justify-content: space-around;
+  box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.488);
+  justify-content: space-evenly;
   align-items: center;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
-img.Logo {
-  margin-top: 30px;
-  flex: 1;
-}
+
 img.Logo:hover {
-  opacity: 80%;
+  opacity: 90%;
 }
-img.image {
-  width: 250px;
-  height: 250px;
+.image {
+  width: 200px;
+  height: 200px;
   object-fit: contain;
 }
-div.imgWrap {
+.imgWrap {
   display: flex;
   width: 250px;
-  height: 400px;
+  height: 340px;
   align-items: center;
   z-index: -20;
   flex-direction: column;
   justify-content: center;
   cursor: pointer;
-  border: 3px solid rgba(249, 249, 249, 0.1);
+  border-radius: 3px;
+  box-shadow: 2px 2px 8px #80808088;
   overflow: hidden;
-  box-shadow: rgb(0 0 0 / 80%) 0px 20px 58px -16px,
-    rgb(0 0 0 / 72%) 0px 30px 22px -10px;
+
   transition: all 250ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 0s;
 }
-div.imgWrap:hover {
-  transform: scale(1.02);
-
-  border-color: rgba(249, 249, 249, 0.8);
+.imgWrap:hover {
+  transform: scale(1.04);
 }
-div.cardsCont {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-evenly;
-}
-div.card {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  flex-direction: column;
-  margin: 28px;
-  height: 440px;
-}
-h4.title {
+.title {
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 0px;
   margin-bottom: 0px;
   display: flex;
   justify-content: center;
@@ -76,14 +55,11 @@ div.price {
   font-weight: bold;
   font-style: italic;
   padding: 10px;
-  margin-top: 10px;
-  margin-bottom: 0px;
 }
 div.cat {
   display: flex;
   justify-content: center;
   align-items: center;
-
   text-align: right;
   padding-top: 5px;
   font-size: 12px;
@@ -92,10 +68,40 @@ div.cat {
   color: white;
   text-transform: uppercase;
   font-weight: bold;
-
   z-index: -5;
 
   margin-bottom: 0px;
+}
+.SinglePage {
+  display: flex;
+  justify-content: space-evenly;
+  max-width: 1300px;
+  width: 80vw;
+  height: 70vh;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.Page {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.PageInfo {
+  width: 500px;
+}
+.PageTitle {
+  color: #6b93b8;
+  width: 100%;
+  display: flex;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  box-shadow: 0px 2px 4px #8080807b;
+  justify-content: center;
+}
+.PageTitle h2 {
+  width: 75%;
+  font-size: 18px;
+  font-weight: 200;
 }
 div.mens {
   background: rgb(88, 170, 236);
@@ -119,46 +125,31 @@ div.content {
   text-align: center;
 }
 img.singleImg {
-  width: 300px;
-  box-shadow: 0px 0px 15px;
+  max-width: 300px;
+  box-shadow: 2px 2px 10px grey;
   padding: 20px;
 }
-div.fullPrice {
-  width: 100%;
-  background: white;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  box-shadow: black 2px 2px 10px;
-}
-div.AddToCart {
+
+.Links {
   display: flex;
-  font-size: 15px;
-  text-transform: uppercase;
-  align-items: center;
-  justify-content: center;
-  margin-top: 20px;
-  color: white;
-  background: rgb(85, 82, 82);
-  padding: 10px;
-  transition: all 0.3s;
-}
-div.AddToCart:hover {
-  cursor: pointer;
-  background: rgb(214, 126, 126);
+  width: 30%;
+  justify-content: space-evenly;
 }
 div.cartBox {
   display: flex;
+  justify-content: center;
   align-items: baseline;
   font-size: 18px;
+  width: 100%;
 }
-i.cart {
-  font-size: 30px;
+.card {
+  margin: 30px;
 }
+
 div.cartCard {
   width: 85vw;
   padding: 10px;
   box-shadow: 0px 0px 8px;
-
   margin: 10px;
   display: flex;
   flex-wrap: wrap;
@@ -183,15 +174,7 @@ div.remove:hover {
   color: rgb(154, 17, 17);
   cursor: pointer;
 }
-div.emptyCart {
-  margin-top: 50px;
-  width: 80vw;
-  max-width: 500px;
-  box-shadow: 2px 2px 10px;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 20px;
-}
+
 div.checkBtn {
   display: flex;
   margin-top: 20px;
@@ -213,8 +196,8 @@ h5.checkout:hover {
   background: rgb(42, 149, 42);
   cursor: pointer;
 }
-div.Banner {
-  height: 250px;
+.Banner {
+  height: 50vh;
   width: 100%;
   text-align: center;
   background-image: linear-gradient(rgb(88, 170, 236), rgb(22, 27, 57));
@@ -224,11 +207,9 @@ div.Banner {
   justify-content: center;
   color: white;
   box-shadow: black inset 0px 0px 8px;
-  margin-bottom: 20px;
 }
 h1.bannerTitle {
   font-size: 35px;
-  text-transform: uppercase;
 }
 p.productTypes {
   font-weight: bold;
@@ -236,11 +217,7 @@ p.productTypes {
   text-transform: uppercase;
   color: rgb(60, 239, 255);
 }
-@media only screen and (max-width: 600px) {
-  p.productTypes {
-    font-size: 12px;
-  }
-}
+
 div.modal {
   position: fixed;
   top: 0;
@@ -270,10 +247,7 @@ div.modal__inner {
   padding: 1em 2em;
   height: 70%;
 }
-div.cardBox {
-  margin-top: 50px;
-  margin-bottom: 100px;
-}
+
 div.payPal {
   display: flex;
   align-items: center;
@@ -319,80 +293,92 @@ div.opacityH:hover {
 i.bigShop {
   font-size: 50px;
 }
-div.imageMin {
-  display: flex;
-  align-items: center;
-  margin: 10px;
-}
-div.search {
-  width: 100%;
-  position: fixed;
-  top: 0px;
-  left: 0;
-}
+
 input {
-  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  width: 270px;
+  border-radius: 4px;
   text-align: center;
-  border: none;
-  height: 50px;
-  margin-top: 70px;
+  border: 1px solid #b5b5b5;
 }
 div.searchQ {
+  box-shadow: 0px 0px 3px rgba(128, 128, 128, 0.034);
   background-color: white;
   padding: 10px;
   z-index: 20;
+  width: 270px;
+  position: absolute;
   color: black;
 }
-img.DevTag {
-  width: 200px;
-  position: fixed;
-  bottom: -1px;
-  right: 0px;
-  z-index: 20;
-}
-div.Line {
-  background: rgb(59, 144, 217);
-  height: 3px;
-  width: 100%;
-}
-div.top {
-  margin-top: 25px;
-}
-div.bottom {
-  margin-bottom: 40px;
+a:hover {
+  opacity: 80%;
+  cursor: pointer;
 }
 h3.number {
-  align-content: center;
   background: white;
   border-radius: 100%;
-  width: 25px;
-  padding: 5px;
+  width: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 12px;
-  height: 25px;
+  height: 22px;
   text-align: center;
-  box-shadow: rgba(0, 0, 0, 0.43) 0px 0px 5px;
+  box-shadow: rgba(0, 0, 0, 0.43) 0px 0px 3px;
   margin-top: -5px;
   z-index: 20;
 }
-div.carouselCont {
-  background: rgba(128, 128, 128, 0.094);
+.CartPage {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  padding: 10px;
-  border-radius: 5px;
-  border: 2px solid rgb(226, 225, 225);
-}
-
-div.scrollCard {
-  display: flex;
-
   flex-direction: column;
-  justify-content: space-evenly;
-  width: 250px;
-  height: 450px;
+  align-items: center;
+  justify-content: center;
 }
-button {
-  display: none;
+.emptyCart {
+  width: 90%;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.Box {
+  display: flex;
+  align-items: center;
+}
+.Box img {
+  width: 22px;
+  margin-left: 10px;
+}
+.BigCont {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.cardsCont {
+  display: flex;
+  width: 90vw;
+  max-width: 1200px;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+@media only screen and (max-width: 600px) {
+  p.productTypes {
+    font-size: 12px;
+  }
+  .search {
+    display: none;
+  }
+  .SinglePage {
+    height: 100vh;
+  }
+  .Logo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 15px;
+  }
+  .Links {
+    width: 80%;
+  }
 }

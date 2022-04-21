@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addProduct } from "../redux/actions/productActions";
-import SuggestedProducts from "./SuggestedProducts";
+
 function Cart() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart);
@@ -25,7 +25,7 @@ function Cart() {
     setOpen((Open) => !Open);
   }
   return (
-    <div>
+    <div className="CartPage">
       {cart.products.length === 0 && (
         <div className="emptyCart">
           <h1>Your cart is empty</h1>
@@ -82,10 +82,6 @@ function Cart() {
           </div>
         </div>
       )}
-      <div>
-        <div className="Line top bottom"></div>
-        <SuggestedProducts />
-      </div>
     </div>
   );
 }
