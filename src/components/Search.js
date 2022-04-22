@@ -35,7 +35,12 @@ function Search() {
               })
               .map((value) => {
                 return (
-                  <Link key={value.id} to={`/products/${value.id}`}>
+                  <Link
+                    className="Suggested"
+                    key={value.id}
+                    to={`/products/${value.id}`}
+                  >
+                    <img src={value.image} className="SmallImg" />
                     <p onClick={Clear}>{value.title}</p>
                   </Link>
                 );

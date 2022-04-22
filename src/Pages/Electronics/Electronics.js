@@ -26,11 +26,12 @@ const Electronics = () => {
 
   return (
     <div>
+      {" "}
       <div className="Page">
         <div className="PageTitle">
           <h2>Electronics</h2>
-        </div>
-      </div>
+        </div>{" "}
+      </div>{" "}
       <div className="BigCont">
         <div className="cardsCont">{renderList}</div>
       </div>

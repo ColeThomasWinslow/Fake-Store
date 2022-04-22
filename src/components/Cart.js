@@ -30,14 +30,13 @@ function Cart() {
         <div className="emptyCart">
           <h1>Your cart is empty</h1>
           <Link to="/">
-            <p>Go back to shopping</p>
+            <p className="Back"> back to shopping</p>
           </Link>
         </div>
       )}
       {cart.products.length >= 1 && (
         <div>
           <h1> YOUR CART</h1>
-          <div className="Line bottom"></div>
           <h3>Total Cart: ${sum}</h3>
 
           {cart.products.map((product) => {
