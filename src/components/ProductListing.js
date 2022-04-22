@@ -3,8 +3,7 @@ import { useDispatch } from "react-redux";
 import axios from "axios";
 import { setProducts } from "../redux/actions/productActions";
 import ProductComponent from "./ProductComponent";
-import { useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+
 export const ProductListing = () => {
   const dispatch = useDispatch();
   const fetchProducts = async () => {

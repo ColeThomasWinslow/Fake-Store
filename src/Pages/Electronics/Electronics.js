@@ -6,7 +6,7 @@ const Electronics = () => {
   const renderList = products.map((product) => {
     const { id, title, image, price, category } = product;
     return (
-      <>
+      <div key={id}>
         {category === "electronics" && (
           <div className="card" key={id}>
             <Link to={`/products/${id}`}>
@@ -20,7 +20,7 @@ const Electronics = () => {
             </Link>
           </div>
         )}
-      </>
+      </div>
     );
   });
 

@@ -6,9 +6,9 @@ const Mens = () => {
   const renderList = products.map((product) => {
     const { id, title, image, price, category } = product;
     return (
-      <>
+      <div key={id}>
         {category === "men's clothing" && (
-          <div className="card" key={id}>
+          <div className="card">
             <Link to={`/products/${id}`}>
               <div className="imgWrap">
                 <img className="image" src={image} alt={title} />{" "}
@@ -20,7 +20,7 @@ const Mens = () => {
             </Link>
           </div>
         )}
-      </>
+      </div>
     );
   });
 

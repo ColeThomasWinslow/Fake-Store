@@ -14,7 +14,7 @@ export const ProductDetails = () => {
   const product = useSelector((state) => state.product);
   const cart = useSelector((state) => state.cart);
 
-  const { image, title, price, category, description } = product;
+  const { id, image, title, price, category, description } = product;
   // getting id form url
   const { productId } = useParams();
   // dispatch actions
@@ -26,7 +26,7 @@ export const ProductDetails = () => {
       .catch((err) => {
         console.log(err);
       });
-
+    dispatch(removeSelectedProduct());
     dispatch(selectedProduct(response.data));
   };
   // Add to cart action
@@ -37,11 +37,9 @@ export const ProductDetails = () => {
       setAdded(() => false);
     }, 2000);
   }
+
   useEffect(() => {
-    if (productId && productId !== "") fetchProductDetail();
-    return () => {
-      dispatch(removeSelectedProduct());
-    };
+    fetchProductDetail();
   }, [productId]);
 
   return (
@@ -66,8 +64,7 @@ export const ProductDetails = () => {
                 <div className="meta cat women">{category}</div>
               )}
               <h1>{title}</h1>
-              <div className="price fullPrice">${price}</div>
-              <p>{description}</p>
+              <p>{description}</p> <div className=" fullPrice">${price}</div>
               <div className="AddToCartBtn" onClick={addToCart}>
                 <i className="shop icon"></i>
                 <div className="">Add to cart</div>
