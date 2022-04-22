@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import SmallLogo from "../icons/SmallLogo.png";
 import axios from "axios";
 import {
   selectedProduct,
@@ -9,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 
 export const ProductDetails = () => {
+  const [Added, setAdded] = useState(false);
   const product = useSelector((state) => state.product);
   const cart = useSelector((state) => state.cart);
 
@@ -30,6 +32,10 @@ export const ProductDetails = () => {
   // Add to cart action
   function addToCart() {
     dispatch(addProduct(cart.products.push(product)));
+    setAdded(() => true);
+    setTimeout(() => {
+      setAdded(() => false);
+    }, 2000);
   }
   useEffect(() => {
     if (productId && productId !== "") fetchProductDetail();
@@ -62,10 +68,18 @@ export const ProductDetails = () => {
               <h1>{title}</h1>
               <div className="price fullPrice">${price}</div>
               <p>{description}</p>
-              <div className="AddToCart" onClick={addToCart}>
+              <div className="AddToCartBtn" onClick={addToCart}>
                 <i className="shop icon"></i>
-                <div className="visible content">Add to cart</div>
+                <div className="">Add to cart</div>
               </div>
+              {Added && (
+                <div className="Added">
+                  <p>Item Added</p>
+                  <span>
+                    <img src={SmallLogo} alt="Small logo" />
+                  </span>
+                </div>
+              )}
             </div>
           </div>
         </div>

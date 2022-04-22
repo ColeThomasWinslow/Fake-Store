@@ -337,7 +337,42 @@ input {
 input:focus {
   outline: none;
 }
-
+.Added {
+  display: flex;
+  align-items: center;
+  width: 200px;
+  background: white;
+  justify-content: space-evenly;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  font-weight: bold;
+  box-shadow: 0px 0px 10px rgba(128, 128, 128, 0.306);
+  position: fixed;
+  right: 90px;
+  top: 110px;
+}
+.Added p {
+  margin: 0px;
+}
+.Added img {
+  width: 20px;
+}
+.AddToCartBtn {
+  margin-top: 20px;
+  width: 200px;
+  box-shadow: 2px 2px 10px #8080803c;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-weight: bold;
+}
+.AddToCartBtn:hover {
+  color: white;
+  background: #4f8bb6;
+}
 div.searchQ {
   box-shadow: 0px 0px 3px #4c4b4be9;
   background-color: white;
@@ -406,6 +441,14 @@ h3.number {
 @media only screen and (max-width: 600px) {
   p.productTypes {
     font-size: 12px;
+  }
+  .Added {
+    width: 50px;
+    top: 150px;
+    right: 10px;
+  }
+  .Added p {
+    display: none;
   }
   .search {
     display: none;
