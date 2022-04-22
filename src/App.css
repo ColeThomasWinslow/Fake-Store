@@ -85,10 +85,33 @@ div.cat {
 .Page {
   width: 100%;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
 }
 .PageInfo {
   width: 500px;
+}
+.CartInfo {
+  padding: 20px;
+  display: flex;
+  margin-top: 50px;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.TotalBox {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90vw;
+  margin-left: 50px;
+  max-width: 300px;
+  box-shadow: 2px 2px 10px rgba(128, 128, 128, 0.178);
+}
+.TotalBox h3 {
+  margin: 5px;
 }
 .PageTitle {
   color: #6b93b8;
@@ -138,7 +161,7 @@ img.singleImg {
   width: 30%;
   justify-content: space-evenly;
 }
-div.cartBox {
+.cartBox {
   display: flex;
   justify-content: center;
   align-items: baseline;
@@ -148,17 +171,18 @@ div.cartBox {
 .card {
   margin: 30px;
 }
-
-div.cartCard {
+.cartCard {
   width: 85vw;
-  padding: 10px;
-  box-shadow: 0px 0px 8px;
+  max-width: 500px;
+  padding: 14px;
+  box-shadow: 0px 0px 10px #80808048;
   margin: 10px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
   align-items: center;
 }
+
 h4.cartTitle {
   flex: 1;
   margin: 5px;
@@ -171,6 +195,7 @@ p.cartPrice {
 div.remove {
   height: 100%;
   font-weight: bold;
+  font-size: 12px;
   text-transform: uppercase;
 }
 div.remove:hover {
@@ -180,16 +205,16 @@ div.remove:hover {
 
 div.checkBtn {
   display: flex;
-  margin-top: 20px;
   justify-content: center;
 }
-h5.checkout {
+.checkout {
   text-transform: uppercase;
   text-align: center;
-  background: rgb(65, 185, 65);
+  background: #1a5d1a;
   padding: 5px;
   display: flex;
-  width: 35vw;
+  font-size: 12px;
+  width: 80%;
   color: white;
   font-weight: bold;
   justify-content: center;
@@ -262,6 +287,8 @@ div.modal__inner {
   right: 10%;
   bottom: 0;
   left: 10%;
+  width: 90vw;
+  max-width: 400px;
   z-index: 20;
   text-align: center;
   display: flex;
@@ -280,7 +307,7 @@ div.payPal {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50vw;
+  width: 70%;
   height: 50px;
   border-radius: 5px;
   border: 2px solid rgb(197, 178, 56);
@@ -290,8 +317,9 @@ div.Cancel {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50vw;
+  width: 70%;
   height: 30px;
+  margin-top: 80px;
   border-radius: 5px;
   color: white;
   font-weight: bold;
@@ -303,7 +331,7 @@ div.Debit {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50vw;
+  width: 70%;
   height: 50px;
   margin: 10px;
   font-size: 12px;
@@ -400,12 +428,7 @@ h3.number {
   margin-top: -5px;
   z-index: 20;
 }
-.CartPage {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
+
 .emptyCart {
   width: 70%;
   background: #f6f6f64f;

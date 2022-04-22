@@ -25,7 +25,10 @@ function Cart() {
     setOpen((Open) => !Open);
   }
   return (
-    <div className="CartPage">
+    <div className=" Page">
+      <div className="PageTitle">
+        <h2>Your Cart</h2>
+      </div>
       {cart.products.length === 0 && (
         <div className="emptyCart">
           <h1>Your cart is empty</h1>
@@ -34,34 +37,41 @@ function Cart() {
           </Link>
         </div>
       )}
-      {cart.products.length >= 1 && (
-        <div>
-          <h1> YOUR CART</h1>
-          <h3>Total Cart: ${sum}</h3>
-
-          {cart.products.map((product) => {
-            return (
-              <div className="cartCard">
-                <div className="imageMin">
-                  <img width="25px" src={product.image} alt={product.title} />
-                </div>
-                <h4 className="cartTitle">{product.title}</h4>
-                <p className="cartPrice">Price: ${product.price}</p>
-                <div
-                  className="remove"
-                  onClick={() => removeFromCart(product.id)}
-                >
-                  remove item
-                </div>
+      <div>
+        {cart.products.length >= 1 && (
+          <div>
+            <div className="CartInfo">
+              {cart.products.map((product) => {
+                return (
+                  <div className="cartCard">
+                    <div className="imageMin">
+                      <img
+                        width="25px"
+                        src={product.image}
+                        alt={product.title}
+                      />
+                    </div>
+                    <h4 className="cartTitle">{product.title}</h4>
+                    <p className="cartPrice">Price: ${product.price}</p>
+                    <div
+                      className="remove"
+                      onClick={() => removeFromCart(product.id)}
+                    >
+                      remove item
+                    </div>
+                  </div>
+                );
+              })}
+              <div className="TotalBox">
+                <h3>Total Cart: ${sum}</h3>
+                <h3 onClick={checkoutToggle} className="checkout checkBtn">
+                  CheckOut
+                </h3>
               </div>
-            );
-          })}
-          <div className="Line top"></div>
-          <div className="checkBtn" onClick={checkoutToggle}>
-            <h5 className="checkout">CheckOut</h5>
+            </div>
           </div>
-        </div>
-      )}
+        )}
+      </div>
       {Open && (
         <div className="modal">
           <div className="modal__inner">
